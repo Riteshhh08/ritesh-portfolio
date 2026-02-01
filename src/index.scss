@@ -16,37 +16,181 @@ code {
 .main-container {
   position: relative;
   background-color: #0d1116;
-
 }
 
-a {
-  text-decoration: none;
+/* Dark mode: force white text everywhere for readability */
+.main-container.dark-mode,
+.main-container:not(.light-mode) {
+  p, a, h1, h2, h3, h4, h5, label, button {
+    color: #fff !important;
+  }
+
+  .about-section h1,
+  .about-section p,
+  .about-section .content a,
+  .about-section .social_icons,
+  .about-section .mobile_social_icons {
+    color: #fff !important;
+  }
+
+  .about-section .social_icons svg,
+  .about-section .mobile_social_icons svg {
+    color: #fff !important;
+  }
+
+  .skills-container h1,
+  .skills-container h3,
+  .skills-container p,
+  .skills-container .skill p,
+  .skills-container .flex-chips .chip-title,
+  .skills-container svg {
+    color: #fff !important;
+  }
+
+  .nav-bubble-bar .nav-logo-rv,
+  .nav-bubble-bar .nav-logo-icon,
+  .nav-bubble-bar .nav-links-box .MuiButton-root,
+  .nav-bubble-bar .nav-links-box .MuiButton-root *,
+  .nav-bubble-bar .nav-menu-icon,
+  .nav-bubble-bar .nav-menu-icon * {
+    color: #fff !important;
+  }
+
+  .nav-bubble-bar .nav-links-box .MuiButton-root:hover,
+  .nav-bubble-bar .nav-links-box .MuiButton-root:hover * {
+    color: rgba(255, 255, 255, 0.95) !important;
+  }
+
+  /* Timeline: only the date (outside the white box) stays white; content inside white boxes is set below to dark */
+  .vertical-timeline-element .vertical-timeline-element-date {
+    color: #fff !important;
+  }
+
+  /* Timeline white boxes: text inside must be dark in dark mode so it’s visible on white */
+  .vertical-timeline-element-content,
+  .vertical-timeline-element-content p,
+  .vertical-timeline-element-content h3,
+  .vertical-timeline-element-content h4,
+  .vertical-timeline-element-content span,
+  .vertical-timeline-element-content .vertical-timeline-element-title,
+  .vertical-timeline-element-content .vertical-timeline-element-subtitle {
+    color: #1a1a1a !important;
+  }
+
+  .projects-container h1,
+  .projects-container h2,
+  .projects-container p,
+  .projects-container a {
+    color: #fff !important;
+  }
+
+  .contact_wrapper,
+  .contact-form label {
+    color: #fff !important;
+  }
+
+  /* Contact form: inputs have white background in dark mode — keep typed text & placeholder black so they’re visible */
+  .contact-form .MuiInputBase-input,
+  .contact-form .MuiInputBase-input::placeholder {
+    color: #111 !important;
+    -webkit-text-fill-color: #111 !important;
+    opacity: 1;
+  }
+
+  .contact-form .MuiFormLabel-root,
+  .contact-form .MuiInputLabel-root {
+    color: rgba(255, 255, 255, 0.9) !important;
+  }
+
+  .contact-form .MuiFormHelperText-root {
+    color: rgba(255, 255, 255, 0.8) !important;
+  }
+
+  .contact-form .MuiInputLabel-root.MuiInputLabel-shrink {
+    color: #1a1a1a !important;
+  }
+
+  .contact-form .MuiButton-contained {
+    color: #050f0b !important;
+  }
+
+  footer p,
+  footer a {
+    color: #fff !important;
+  }
+
+  footer svg {
+    color: #fff !important;
+  }
 }
 
-a:hover {
-  color: #9333ea;
-  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+/* Top bar: transparent so content flows under; single bubble bar floats on top */
+.navbar-fixed-top,
+.navbar-fixed-top.MuiAppBar-root {
+  background: transparent !important;
+  box-shadow: none !important;
 }
 
-p, a, h1, h2, h3, h4, h5, label, button {
-  color: white;
-  font-family: "Lato", sans-serif;
+/* Single horizontal bubble bar (rumlik.ai style) */
+.nav-bubble-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0.5rem 1rem 0.5rem 1.25rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+  min-height: 52px;
+}
+
+.nav-bubble-bar .nav-menu-icon {
+  color: #fff;
+}
+
+.main-container.light-mode .nav-bubble-bar .nav-menu-icon {
+  color: #1a1a1a;
+}
+
+/* Dark mode: slightly darker bar so white text has clear contrast */
+.main-container.dark-mode .nav-bubble-bar,
+.main-container:not(.light-mode) .nav-bubble-bar {
+  background: rgba(30, 35, 42, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.main-container.light-mode .nav-bubble-bar {
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
 }
 
 .navigation-bar {
-  justify-content: space-between;
-  background-color: #0d1116;
+  justify-content: center;
+  background: transparent !important;
+  padding: 12px 24px;
+  min-height: 76px;
 
   button {
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     font-family: "Lato", sans-serif;
-    text-transform: initial;
-    padding: 6px 10px;
+    text-transform: none;
+    padding: 6px 12px;
   }
 
   .nav-logo-rv {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
     font-family: "Fredoka", sans-serif;
-    font-size: 2.25rem;
+    font-size: 1.4rem;
     font-weight: 600;
     letter-spacing: -0.03em;
     color: #fff;
@@ -54,24 +198,69 @@ p, a, h1, h2, h3, h4, h5, label, button {
     border: none;
     cursor: pointer;
     padding: 0.25rem 0.5rem;
-    margin-right: 0.5rem;
-    transition: transform 0.3s ease;
-    transform: scale(1.15);
+    margin: 0;
+    transition: opacity 0.2s ease, transform 0.2s ease;
     -webkit-font-smoothing: antialiased;
+  }
 
-    &:hover {
-      transform: scale(0.88);
+  .nav-logo-icon {
+    font-size: 0.85em;
+    opacity: 0.9;
+  }
+
+  .nav-logo-rv:hover {
+    opacity: 0.85;
+    transform: scale(1.02);
+  }
+
+  .nav-links-box .MuiButton-root {
+    color: #fff !important;
+    font-weight: 500;
+    min-width: auto;
+  }
+
+  .nav-cta-btn {
+    display: none;
+  }
+
+  @media (min-width: 600px) {
+    .nav-cta-btn {
+      display: inline-flex;
     }
   }
 
-  .nav-links-box {
-    display: flex;
-    justify-content: flex-end;
+  .nav-cta-btn {
+    background: #000 !important;
+    color: #fff !important;
+    border-radius: 9999px;
+    padding: 0.5rem 1rem 0.5rem 1.25rem !important;
+    font-weight: 600;
+    text-transform: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .nav-cta-btn:hover {
+    background: #1a1a1a !important;
+  }
+
+  .nav-cta-btn svg {
+    color: #fff !important;
+    margin-left: 4px;
   }
 
   svg {
     cursor: pointer;
   }
+}
+
+/* Light mode: bar text dark on translucent bar */
+.main-container.light-mode .nav-bubble-bar .nav-logo-rv,
+.main-container.light-mode .nav-bubble-bar .nav-links-box .MuiButton-root {
+  color: #1a1a1a !important;
+}
+
+.main-container.light-mode .nav-bubble-bar .nav-links-box .MuiButton-root:hover {
+  color: #9333ea !important;
 }
 
 .navigation-bar-responsive {
@@ -118,14 +307,21 @@ p, a, h1, h2, h3, h4, h5, label, button {
 }
 
 .light-mode {
-  background-color: #f8f9fa;
+  /* Brown paper background so bar looks like reference */
+  background-color: #e8dfd4;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(220, 210, 200, 0.4) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(200, 190, 180, 0.3) 0%, transparent 45%),
+    radial-gradient(rgba(80, 70, 60, 0.2) 1.2px, transparent 1.2px);
+  background-size: 100% 100%, 100% 100%, 22px 22px;
+  background-position: 0 0, 0 0, 0 0;
 
   .navigation-bar {
-    background-color: #f8f9fa;
+    background: transparent !important;
+  }
 
-    .nav-logo-rv {
-      color: #0d1116;
-    }
+  .nav-logo-rv {
+    color: #1a1a1a;
   }
 
   p, a, h1, h2, h3, h4, h5, label, button {

@@ -31,8 +31,27 @@
     color: white;
 }
 
+/* Dark mode only: date (outside box) stays white; text inside the white content box = dark so visible on white */
+.main-container.dark-mode .vertical-timeline-element .vertical-timeline-element-date {
+    color: #fff !important;
+}
+
+.main-container.dark-mode .vertical-timeline-element-content,
+.main-container.dark-mode .vertical-timeline-element-content p,
+.main-container.dark-mode .vertical-timeline-element-content h3,
+.main-container.dark-mode .vertical-timeline-element-content h4,
+.main-container.dark-mode .vertical-timeline-element-content span,
+.main-container.dark-mode .vertical-timeline-element-content .vertical-timeline-element-title,
+.main-container.dark-mode .vertical-timeline-element-content .vertical-timeline-element-subtitle {
+    color: #1a1a1a !important;
+}
+
 @media screen and (max-width: 1170px) {
     .vertical-timeline-element .vertical-timeline-element-date {
         color: rgb(39, 40, 34);
+    }
+
+    .main-container.dark-mode .vertical-timeline-element .vertical-timeline-element-date {
+        color: #fff !important;
     }
 }
