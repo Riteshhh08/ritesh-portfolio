@@ -75,7 +75,7 @@ GitHub Pages Deployment
 Update the following in package.json:
 
 {
-  "homepage": "https://riteshh08.github.io/react-portfolio",
+  "homepage": "https://riteshh08.github.io/ritesh-portfolio",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
@@ -95,4 +95,4 @@ npm run deploy
 
 The deployed site will be available at:
 
-https://riteshh08.github.io/react-portfolio
+https://riteshh08.github.io/ritesh-portfolio
