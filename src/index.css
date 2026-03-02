@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(160deg, #faf8ff 0%, #f3e8ff 50%, #e9d5ff 100%);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f3e8ff; }
+::-webkit-scrollbar-thumb { background: #7C3AED; border-radius: 3px; }
+
+/* CONTACT FORM INPUT FIX — text always visible */
+.contact-input {
+  background: rgba(255, 255, 255, 0.95) !important;
+  color: #1f2937 !important;
+  caret-color: #7C3AED !important;
+}
+.contact-input::placeholder { color: #9ca3af !important; }
+.contact-input:focus {
+  outline: none !important;
+  ring: 2px solid #a78bfa !important;
+  background: #ffffff !important;
+  color: #111827 !important;
+}
+

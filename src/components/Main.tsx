@@ -9,6 +9,12 @@ function Main() {
   return (
     <div className="container">
       <div className="about-section">
+        {/* Animated hero background (purple wave / neural style) */}
+        <div className="hero-background" aria-hidden="true">
+          <div className="hero-orb hero-orb-primary" />
+          <div className="hero-orb hero-orb-secondary" />
+        </div>
+
         <div className="image-wrapper">
           <img src={avatar} alt="Ritesh Vishwakarma" />
         </div>
@@ -20,7 +26,7 @@ function Main() {
           <h1>Ritesh Vishwakarma</h1>
           <p>Java Full Stack Developer | Computer Science Graduate</p>
           <a
-            href="https://drive.google.com/file/d/1KkMASE9-lzgrGWn3txLmGnsug6Y2wruf/view?usp=drive_link"
+            href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="resume-btn"

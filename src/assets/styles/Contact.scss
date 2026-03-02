@@ -23,6 +23,10 @@
   }
 }
 
+.main-container.dark-mode .contact-form fieldset {
+  background-color: #f9fafb;
+}
+
 label {
   font-size: 1.2rem;
   font-family: 'DomaineDispNar-Medium', sans-serif;
@@ -49,4 +53,12 @@ form {
 
 .contact-form .MuiAlert-root {
   margin-bottom: 16px;
+}
+
+.contact-honeypot {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  height: 0;
+  width: 0;
 }

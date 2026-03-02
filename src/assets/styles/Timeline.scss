@@ -31,6 +31,21 @@
     color: white;
 }
 
+.timeline-section {
+    margin-bottom: 3.5rem;
+}
+
+.timeline-list {
+    margin: 0.75rem 0 0;
+    padding-left: 1.25rem;
+    list-style: disc;
+}
+
+.timeline-list li {
+    margin-bottom: 0.35rem;
+    font-size: 0.98rem;
+}
+
 /* Dark mode only: date (outside box) stays white; text inside the white content box = dark so visible on white */
 .main-container.dark-mode .vertical-timeline-element .vertical-timeline-element-date {
     color: #fff !important;
